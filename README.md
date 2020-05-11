@@ -1,1 +1,2 @@
-# mindbox-uikit
+# React-UI-Kit
+mindbox React uikit 
