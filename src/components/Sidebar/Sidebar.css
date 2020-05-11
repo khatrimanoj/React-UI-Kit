@@ -1,0 +1,535 @@
+.sidebar {
+  width: 100%;
+  float: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  max-width: 352px;
+  position: relative;
+}
+.sidebar.dark {
+  background-color: var(--dark-bg);
+}
+.sidebar.collapsed {
+  min-width: 72px;
+  overflow: hidden;
+}
+.sidebar.dark .sidebar-menu .sidebar-head {
+  background-color: var(--dark-bg-variant);
+  color: var(--white);
+  border-bottom: 1px solid #fffefe3b
+}
+.sidebar .sidebar-menu .sidebar-head img.half-logo {
+  width: auto;
+  margin: auto;
+}
+.sidebar.dark .sidebar-menu .sidebar-head .avitar-label .avitartitle .body2 {
+  color: var(--white);
+}
+.sidebar.dark.business .sidebar-menu .sidebar-head {
+  background-color: var(--dark-bg);
+}
+.sidebar.collapsed .sidebar-menu .sidebar-head {
+  padding: 8px 16px;
+}
+.sidebar .sidebar-menu .sidebar-head .logo {
+  width: 100px;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-head .more {
+  display: none;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-head .avitartitle .body2,
+.sidebar.collapsed .sidebar-menu .sidebar-head .avitartitle p select {
+  display: none;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-content a,
+.sidebar.business.xs .sidebar-menu .sidebar-content .other-links.chat a {
+  font-size: 0 !important;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-content .sub-title {
+  font-size: 0 !important;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-content .sub-title {
+  background: url('../../images//menu-icon/Items_List.svg') no-repeat;
+  background-position: center;
+}
+.sidebar.collapsed.dark .sidebar-menu .sidebar-content .sub-title {
+  background: url('../../images//menu-icon/dark_Items_List.svg') no-repeat;
+  background-position: center;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-content .menu-item a .badge {
+  right: unset;
+  margin-left: 20px;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-content .menu-item a .badge label,
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item a .badge label {
+  font-size: 0;
+  padding: 4px;
+  line-height: normal;
+  border-radius: 4px;
+}
+.sidebar .sidebar-menu {
+  background-color: #ffffff;
+  flex-basis: 100px;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.sidebar .sidebar-menu .sidebar-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 24px;
+  height: 72px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.sidebar .sidebar-menu .sidebar-head .status {
+  position: relative;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+.sidebar .sidebar-menu .sidebar-head .status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #d7d7d7;
+  left: 0;
+  border: 2px solid var(--white);
+}
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a .menu-icon::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  position: absolute;
+  background-color: #d7d7d7;
+  right: 12px;
+  bottom: -2px;
+  border: 2px solid var(--white);
+}
+.sidebar.dark .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a .menu-icon::before {
+  border: 2px solid var(--black);
+}
+.sidebar.collapsed .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a .menu-icon::before {
+  right: 0;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-head .status::before {
+  left: unset;
+  right: -24px;
+  bottom: 8px;
+  border: 2px solid var(--white) !important;
+  width: 6px;
+  height: 6px;
+}
+.sidebar .sidebar-menu .sidebar-head .status select {
+  border: none;
+  background: transparent url(../../images/downarrow.png) no-repeat;
+  background-position: top 5px right;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #5e636b;
+  outline: none;
+}
+.sidebar.dark .sidebar-menu .sidebar-head .status select {
+  background: transparent url(../../images/menu-icon/Dark_Expand_More.svg) no-repeat;
+  background-position: top 5px right;
+}
+.sidebar.dark .sidebar-menu .sidebar-head .status select {
+  color: var(--white);
+  opacity: 0.64;
+}
+.sidebar.dark .sidebar-menu .sidebar-head .status::before {
+  border: none;
+}
+.sidebar .sidebar-menu .sidebar-head .status.online::before,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a.online .menu-icon::before {
+  background-color: var(--La-Rioja);
+}
+.sidebar .sidebar-menu .sidebar-head .status.offline::before,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a.offline .menu-icon::before {
+  background-color: #d7d7d7;
+}
+.sidebar .sidebar-menu .sidebar-head .status.away::before,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a.away .menu-icon::before {
+  background-color: var(--yellow);
+}
+.sidebar .sidebar-menu .sidebar-head .status.dnd::before,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a.dnd .menu-icon::before {
+  background-color: var(--red);
+}
+
+.sidebar .sidebar-menu .sidebar-head .status.primary::before,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a.primary .menu-icon::before {
+  background-color: var(--primary);
+}
+.sidebar .sidebar-menu .sidebar-head .status.primary-variant::before,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a.primary-variant .menu-icon::before {
+  background-color: var(--primary-variant);
+}
+.sidebar .sidebar-menu .sidebar-head .status.primary::before,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-item a.primary .menu-icon::before {
+  background-color: var(--primary);
+}
+.sidebar .sidebar-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar .sidebar-menu .menu-item ul {
+    display: none;
+}
+.sidebar .sidebar-menu .menu-item.active ul {
+    display: block;
+}
+.sidebar .sidebar-menu .sidebar-content,
+.sidebar .sidebar-menu .sidebar-content .other-links {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.sidebar.dark .sidebar-menu .sidebar-content .other-links .sub-title {
+  background-color: var(--dark-bg-variant);
+  color: var(--white);
+}
+.sidebar.business .sidebar-menu .sidebar-content .main-links {
+  width: 100%;
+  float: left;
+  height: calc(100vh - 420px);
+  overflow: auto;
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item {
+  width: 100%;
+  float: left;
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item a,
+.sidebar .sidebar-menu .sidebar-content .other-links a,
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li a {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--black);
+  display: block; 
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  position: relative;
+}
+.sidebar.business .sidebar-menu .sidebar-content .menu-item a {
+  height: 45px;
+}
+.sidebar.dark .sidebar-menu .sidebar-content .menu-item a,
+.sidebar.dark .sidebar-menu .sidebar-content .other-links a {
+  color: var(--white);
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item a.active,
+.sidebar .sidebar-menu .sidebar-content .other-links a.active {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item a .badge {
+    position: absolute;
+    right: 24px;
+    top: 16px;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item a .badge { 
+  right: unset;
+  margin-left: 32px;
+}
+.sidebar.business .sidebar-menu .sidebar-content .menu-item a .badge {
+  top: 10px;
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item a .menu-icon,
+.sidebar .sidebar-menu .sidebar-content .other-links a .menu-icon {
+  padding-right: 22px;
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item a:hover,
+.sidebar .sidebar-menu .sidebar-content .menu-item a:focus {
+  color: var(--primary) !important;
+  font-weight: 500;
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item.active a {
+  background-color: var(--primary);
+  color: var(--white);
+  font-weight: 500;
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item.active a i {
+  color: var(--white) !important;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links .sub-title {
+  height: 40px;
+  padding: 0 24px;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1;
+  line-height: 16px;
+  color: var(--black);
+}
+.sidebar .sidebar-menu .sidebar-content .other-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links ul li a {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--gray);
+  height: auto;
+  align-items: baseline;
+  padding: 12px 24px;
+}
+.sidebar .sidebar-menu .sidebar-content a img {
+  display: block;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li a {
+  align-items: center;
+  padding: 0px 14px;
+  font-size: 14px;
+  color: var(--black);
+}
+.sidebar.dark .sidebar-menu .sidebar-content .other-links.chat .sub-title,
+.sidebar.dark .sidebar-menu .sidebar-content .other-links.chat ul li a {
+  color: var(--white);
+}
+.sidebar .sidebar-menu ul.sub-menu {
+  margin: 10px 0;
+}
+.sidebar .sidebar-menu .menu-item.active ul.sub-menu li a {
+  background-color: transparent;
+  color: var(--black);
+  padding-left: 40px;
+  height: 40px;
+  display: block;
+  font-weight: 400;  
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .sidebar-menu .sidebar-content .menu-item.bottom-fixed {
+  border-top: 1px solid var(--light-gray);
+  position: absolute;
+  bottom: 0;
+}
+.sidebar.dark .sidebar-menu .sidebar-content .menu-item.bottom-fixed {
+  border-top: 1px solid rgba(255,255,255,0.24);
+}
+.sidebar.dark.business .sidebar-menu .sidebar-content .menu-item.bottom-fixed {
+  border-top: none;
+}
+.sidebar.dark.business .sidebar-menu .sidebar-content .menu-item.bottom-fixed {
+  background-color: var(--dark-bg-variant);
+}
+.sidebar.dark.business .sidebar-menu .sidebar-content .menu-item.bottom-fixed a {
+  color: var(--white);
+}
+.sidebar.dark .sidebar-menu .sidebar-content .menu-item.bottom-fixed a i {
+  background-color: var(--dark-bg-variant) !important;
+  color: var(--white);
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item.bottom-fixed a {
+  height: auto;
+  padding: 16px;
+  color: var(--gray);
+}
+.sidebar.dark .sidebar-menu .sidebar-content .menu-item.bottom-fixed a {
+  color: #aeaeae;
+}
+
+.sidebar .sidebar-menu .sidebar-content .menu-item.bottom-fixed a .menu-icon {
+  padding-right: 10px;
+}
+.sidebar .sidebar-menu .sidebar-content .menu-item.bottom-fixed.active a {
+  color: var(--white);
+}
+.sidebar .sidebar-menu .sidebar-content .other-links.chat {
+  position: absolute;
+  bottom: 56px;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links ul {
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-color: rgba(0,0,0,0.24) transparent;
+  scrollbar-width: thin;
+  scroll-margin-right: 10px;
+}
+.sidebar.dark .sidebar-menu .sidebar-content .other-links ul {
+  scrollbar-color: rgba(255,255,255,0.24) transparent;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links ul li {
+  display: block;
+  width: 100%;
+  float: left;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links ul li:last-child {
+  padding-bottom: 10px;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li:last-child {
+  padding-bottom: 0;
+}
+.sidebar.collapsed .sidebar-menu .sidebar-content .other-links.chat ul li a,
+.sidebar.collapsed .sidebar-menu .sidebar-content .other-links.chat ul li .menu-icon {
+  padding-left: 0px;
+  padding-right: 0px;
+  justify-content: center;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links.chat .sub-title {
+  background: unset;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--black);
+  text-transform: capitalize;
+  height: auto;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links.chat .sub-title .menu-icon {
+  padding-right: 24px;
+  display: flex;
+}
+
+.sidebar .sidebar-menu .sidebar-content .other-links.chat ul li .menu-icon {
+  padding-right: 12px;
+  position: relative;
+}
+.sidebar .sidebar-menu .sidebar-content .other-links.chat .menu-item.bottom-fixed a {
+  background-color: var(--light-gray);
+}
+
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item.active a, 
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item.active a i {
+  color: var(--white) !important;
+  opacity: 0.64;
+}
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item  ul.sub-menu li a {
+  font-size: 14px;
+}
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item.active  ul.sub-menu li:hover a,
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item.active  ul.sub-menu li.active a {
+  opacity: 1;
+  color: var(--primary-variant) !important;
+}
+.sidebar.business .sidebar-menu .sidebar-content .menu-item.active > a,
+.sidebar.business .sidebar-menu .sidebar-content .menu-item.active > a i {
+  color: var(--gray) !important;
+  background-color: transparent;
+}
+.sidebar.business .sidebar-menu .sidebar-content .menu-item ul {
+  padding-left: 26px;
+}
+.sidebar.business .sidebar-menu .sidebar-content .menu-item ul li {
+  border-left: 1px solid #f2f2f2;
+  margin-left: 40px;
+  position: relative;
+}
+.sidebar.business.collapsed .sidebar-menu .sidebar-content .menu-item ul li {
+  margin-left: 0;
+}
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item ul li {
+  border-left: 1px solid #ffffff24;
+}
+.sidebar.business .sidebar-menu .sidebar-content .menu-item ul li a {
+  padding-left: 15px;
+}
+.sidebar.business .sidebar-menu .sidebar-content .menu-item ul li:hover a,
+.sidebar.business .sidebar-menu .sidebar-content .menu-item ul li.active a {
+  color: var(--primary) !important;
+}
+
+.sidebar.business .sidebar-menu .sidebar-content .menu-item ul li.active a::before,
+.sidebar.business .sidebar-menu .sidebar-content .menu-item ul li a:hover::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  border-left: 1px solid var(--primary);
+  height: 24px;
+  opacity: 1;
+}
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item ul li.active a::before,
+.sidebar.business.dark .sidebar-menu .sidebar-content .menu-item ul li a:hover::before {
+  border-left: 1px solid #00a1e8;
+  opacity: 1;
+  color: #00a1e8 !important;
+}
+.sidebar.business .sidebar-menu .sidebar-content .bottom-fixed {
+  background-color: #f2f2f2;
+  border-top: none;
+}
+.sidebar.business .sidebar-menu .sidebar-content .bottom-fixed a {
+  color: var(--black);
+  font-weight: 400;
+  line-height: 24px;
+  padding: 8px 16px;
+}
+
+.sidebar .sidebar-menu .sidebar-content ::-webkit-scrollbar,
+.sidebar .sidebar-menu .sidebar-content ::-webkit-scrollbar-thumb {
+  width: 24px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+}
+.sidebar .sidebar-menu .sidebar-content ::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 0 10px rgba(0,0,0,0.24);
+}
+.sidebar.dark .sidebar-menu .sidebar-content ::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px rgba(255,2550,255,0.24);
+}
+
+.sidebar.collapsed .sidebar-menu .sidebar-content .other-links ul::-webkit-scrollbar,
+.sidebar.collapsed .sidebar-menu .sidebar-content .other-links ul::-webkit-scrollbar-thumb,
+.sidebar.collapsed .sidebar-menu .sidebar-content .other-links ul::-webkit-scrollbar-track  {
+  display: none;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item a,
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item a .menu-icon,
+.sidebar.business.xs .sidebar-menu .sidebar-content .other-links.chat .sub-title,
+.sidebar.business.xs .sidebar-menu .sidebar-content .other-links.chat .sub-title .menu-icon {
+  display: flex;
+  text-align: center;
+  padding: 0;
+  justify-content: center;
+  flex-flow: column;
+  align-content: center;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item a {
+  height: 70px;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item a .menu-icon,
+.sidebar.business.xs .sidebar-menu .sidebar-content .other-links.chat .sub-title .menu-icon {
+  margin-bottom: 5px;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .other-links.chat a {
+  display: flex;
+  justify-content: center;
+  height: 56px;
+  flex-flow: row;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .other-links.chat a .menu-icon {
+  margin-bottom: 0;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .other-links.chat a .menu-icon::before {
+  right: 0;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .bottom-fixed a {
+  font-size: 0;
+  height: 56px;
+  padding: 8px 16px;
+  line-height: 0;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .bottom-fixed a .menu-icon {
+  margin-bottom: 0;
+  line-height: 24px;
+}
+
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item a {
+  font-size: 10px;
+}
+.sidebar.business.xs .sidebar-menu .sidebar-content .menu-item.bottom-fixed a {
+  font-size: 0;
+}

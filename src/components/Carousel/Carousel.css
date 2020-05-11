@@ -1,0 +1,265 @@
+.Carousel {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.Carousel.Carousel--isRTL {
+  direction: rtl;
+}
+.Carousel.Carousel--isRTL .Carousel__trackContainer .Carousel__track {
+  direction: rtl;
+}
+.Carousel .Carousel__trackContainer {
+  /* overflow: hidden; */
+}
+.Carousel .Carousel__trackContainer .Carousel__track {
+  display: flex;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.Carousel .Carousel__trackContainer .Carousel__track.Carousel__track--transition {
+  transition: transform;
+}
+/* arrows */
+.Carousel__arrows {
+  cursor: pointer;
+}
+.Carousel .CarouselItem .carousel-item {
+  width: 100%;
+  float: left;
+  display: flex;
+  position: relative;
+}
+.Carousel .CarouselItem .carousel-item .img-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(270deg, rgba(0, 10, 25, 0.56) 0%, rgba(0, 10, 25, 0.24) 100%);
+  z-index: 1;
+}
+.Carousel .CarouselItem .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 10, 25, 0.24) 0%, rgba(0, 10, 25, 0) 100%);
+  z-index: 9;
+}
+
+/* Carousel 1 css start */
+.Carousel01 .CarouselItem::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 10, 25, 0.24) 0%, rgba(0, 10, 25, 0) 100%);
+  z-index: 9;
+}
+.Carousel01 .CarouselItem  img {
+  min-width: 352px;
+  height: 232px;
+  max-width: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+.Carousel01 .CarouselItem .item {
+  position: relative;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
+.Carousel01 .CarouselItem .overlay {
+  bottom: 0px;
+  background: linear-gradient(to top, rgba(0, 10, 25, 0.24) 0%, rgba(0, 10, 25, 0.08) 100%);
+}
+.Carousel01 .CarouselItem .overlay p {
+  display: none;
+  height: 40px;
+  padding: 10px 16px;
+  color: var(--white);
+}
+
+.Carousel01 .CarouselItem.CarouselItem--active .overlay {
+  display: flex;
+  align-items: center;
+  width: 610px;
+}
+.Carousel01 .CarouselItem.CarouselItem--active .overlay p {
+  display: block;
+}
+.Carousel01 .CarouselItem.CarouselItem--active img {
+  width: 100%;
+  min-width: 610px;
+  min-height: 400px;
+  z-index: 2;
+}
+.Carousel01 .Carousel__arrows.Carousel__arrowLeft {
+  left: 30px;
+  background-color: transparent;
+}
+.Carousel01 .Carousel__arrows.Carousel__arrowRight {
+  right: 30px;
+  background-color: transparent;
+}
+.Carousel01 .Carousel__dots {
+  margin-top: 30px;
+}
+.Carousel01 .Carousel__dots li .Carousel__dot::before {
+  width: 56px;
+  height: 4px;
+  background-color: var(--light-gray);
+  border-radius: 0;
+}
+.Carousel01 .Carousel__dots li .Carousel__dot--selected::before {
+  background-color: var(--primary);
+}
+/* Carousel 1 css end */
+
+/* Carousel 2 css start */
+.Carousel02 {
+  position: relative;
+  width: 100%;
+  float: left;
+}
+.Carousel02 .CarouselItem .overlay {
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.Carousel02 .CarouselItem  img {
+ width: 100%;
+}
+.Carousel02 .CarouselItem .overlay h1 {
+  text-align: center;
+  color: var(--white);
+  margin: 0 auto;
+}
+.Carousel02 .Carousel__arrows {
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
+.Carousel02 .Carousel__arrows.Carousel__arrowLeft {
+  left: 40px;
+}
+.Carousel02 .Carousel__arrows.Carousel__arrowRight {
+  right: 40px;
+}
+.Carousel02 .Carousel__dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+.Carousel02 .Carousel__dots li .Carousel__dot::before {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--white);
+  background-color: transparent;
+}
+.Carousel02 .Carousel__dots li .Carousel__dot--selected::before {
+  background-color: var(--white);
+}
+/* Carousel 2 css end */
+
+/* Card Carousel css start */
+.card-carousel {
+  position: relative;
+  width: 100%;
+  float: left;
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.card-carousel .slide-count {
+  position: absolute;
+  width: 112px;
+  bottom: 24px;
+  padding: 10px;
+  left: 24px;
+  background-color: #2896b5;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.card-carousel .slide-count .Carousel__dots,
+.card-carousel .slide-count .total {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  align-items: center;
+  color: var(--white);
+}
+.card-carousel .slide-count .Carousel__dots li {
+  position: absolute;
+  margin-left: -10px;
+}
+.card-carousel .slide-count .Carousel__dots li .Carousel__dot {
+  font-size: 0;
+}
+.card-carousel .slide-count .Carousel__dots li .Carousel__dot::before {
+  display: none;
+}
+.card-carousel .slide-count .Carousel__dots li .Carousel__dot--selected {
+  font-size: 14px;
+}
+.card-carousel .Carousel__arrows {
+  position: absolute;
+  background-color: #c25c53;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+.card-carousel.arrows-bottom .Carousel__arrows {
+  bottom: 37px;
+  background-color: transparent;
+  width: 20px;
+  height: 14px;
+}
+.card-carousel.arrows-bottom .Carousel__arrows.Carousel__arrowLeft {
+  left: 35px;
+}
+.card-carousel.arrows-bottom .Carousel__arrows.Carousel__arrowRight {
+  right: unset;
+  left: 105px;
+}
+.card-carousel .Carousel__arrows.Carousel__arrowLeft {
+  left: 24px;
+}
+.card-carousel .Carousel__arrows.Carousel__arrowRight {
+  right: 24px !important;
+}
+
+.card-carousel.dots-bottom .Carousel__dots {
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+.card-carousel.dots-bottom .Carousel__dots .Carousel__dot::before {
+  background-color: #c5c7c9;
+  width: 8px;
+  height: 8px;
+}
+.card-carousel.dots-bottom .Carousel__dots .Carousel__dot--selected::before,
+.card-carousel.dots-bottom .Carousel__dots li:first-child .Carousel__dot--selected::before,
+.card-carousel.dots-bottom .Carousel__dots li:last-child .Carousel__dot--selected::before  {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: var(--primary);
+}
+.card-carousel.dots-bottom .Carousel__dots li:first-child .Carousel__dot::before,
+.card-carousel.dots-bottom .Carousel__dots li:last-child .Carousel__dot::before {
+  width: 4px;
+  height: 4px;
+}
+/* Card Carousel css end */
