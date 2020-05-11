@@ -1,0 +1,93 @@
+.Carousel__arrows {
+	 position: absolute;
+	 width: 40px;
+	 height: 40px;
+	 border: none;
+	 overflow: hidden;
+	 outline: 0;
+	 font-size: 0;
+	 line-height: 0;
+	 z-index: 1;
+	 /* background-color: #7b59ff; */
+}
+.Carousel__customArrows {
+	position: absolute;
+}
+.Carousel__customArrows.Carousel__custom-arrowLeft {
+	left: 0;
+}
+.Carousel__customArrows.Carousel__custom-arrowRight {
+	right: 0;
+}
+ .Carousel__arrows span {
+	 display: block;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 border-style: solid;
+	 border-color: #fff;
+	 border-width: 2px 2px 0 0;
+	 padding: 5px;
+	 transition: 0.3s;
+	 font-size: 0;
+}
+ /* .Carousel__arrows:hover {
+	 background-color: #8768ff;
+} */
+ .Carousel__arrows:hover span {
+	 display: block;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 border-style: solid;
+	 border-color: #fff;
+	 border-width: 2px 2px 0 0;
+	 padding: 5px;
+	 transition: 0.3s;
+	 font-size: 0;
+}
+ /* .Carousel__arrows:hover:enabled {
+	 background-color: #8768ff;
+} */
+ .Carousel__arrows:hover:enabled span {
+	 border-color: #fff;
+	 margin: 0;
+}
+ .Carousel__arrows:disabled {
+	 background-color: #ccc;
+}
+ .Carousel__arrowLeft span {
+	 transform: translate(-50%, -50%) rotate(-135deg);
+	 margin-left: 2.45px;
+}
+.Carousel__arrowLeft {
+	left: 0;
+}
+.Carousel__arrowRight {
+	right: 0;
+}
+ .Carousel__arrowRight span {
+	 transform: translate(-50%, -50%) rotate(45deg);
+	 margin-left: -2.45px;
+}
+ .Carousel--isRTL .Carousel__arrowLeft span {
+	 transform: translate(-50%, -50%) rotate(45deg);
+	 margin-left: -2.45px;
+}
+ .Carousel--isRTL .Carousel__custom-arrowLeft span {
+	 transform: rotate(180deg);
+}
+ .Carousel--isRTL .Carousel__arrowRight span {
+	 transform: translate(-50%, -50%) rotate(-135deg);
+	 margin-left: 2.45px;
+}
+ .Carousel--isRTL .Carousel__custom-arrowRight span {
+	 transform: rotate(-180deg);
+}
+ .Carousel--isRTL .Carousel__arrows:hover span {
+	 margin: 0;
+}
+ .Carousel__arrow--disable {
+	 pointer-events: none;
+}
+ 

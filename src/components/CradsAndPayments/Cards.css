@@ -1,0 +1,280 @@
+.label-hidden label, label.label-hidden {
+    visibility: hidden;
+}
+.cards.flex-div {
+    justify-content: space-between;
+    box-sizing: border-box;
+    /* padding: 24px; */
+}
+.cards.flex-div.hasBg-img {
+    background-size: 100% 110% !important;
+    background-position: bottom !important;
+}
+
+.cards.flex-div .top {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 100%;
+    float: left;
+    align-items: flex-start;
+    padding: 24px;
+}
+
+.cards.flex-div .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: 100%;
+    float: left;
+    align-items: flex-end;
+    padding: 24px;
+} 
+
+.cards.flex-div .top .overline {
+    text-transform: lowercase;
+    display: block;
+    margin-bottom: 5px;
+}
+.cards.flex-div .bottom .overline {
+    text-transform: capitalize;
+    display: block;
+}
+.cards.light-version {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.cards.light-version .heading {
+    border-bottom: 1px solid #eee;
+}
+.cards.dark-version .heading {
+    border-bottom: 1px solid rgba(255,255,255,0.24);
+}
+.cards.light-version .heading,
+.cards.light-version .content {
+    padding: 24px;
+}
+.cards.light-version .content ul,
+.cards.dark-version .content ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin: 20px 0;
+    display: block;
+}
+.cards.light-version .content ul li {
+    border: 1px solid #f2f2f2;
+    margin: 8px 0;
+    height: 48px;
+    line-height: 48px;
+}
+.cards.light-version .content .btn,
+.cards.dark-version .content .btn {
+    height: 48px;
+}
+.cards.light-version .content ul li .m-radio,
+.cards.dark-version .content ul li .m-radio {
+    padding: 0 0 0 16px;
+}
+.cards.light-version .content ul li .m-radio__input,
+.cards.dark-version .content ul li .m-radio__input {
+    margin: 0;
+}
+.cards.light-version .content ul li .m-radio__input::before,
+.cards.dark-version .content ul li .m-radio__input::before {
+    background: transparent;
+}
+.cards.light-version .content ul li .m-radio__input:checked,
+.cards.dark-version .content ul li .m-radio__input:checked {
+    border-color: var(--primary);
+}
+.cards.light-version .content ul li .m-radio__input:checked::before,
+.cards.dark-version .content ul li .m-radio__input:checked::before {
+    background: var(--primary);
+}
+.cards.light-version .content ul li .m-radio label,
+.cards.dark-version .content ul li .m-radio label {
+    padding: 0 8px; 
+    width: calc(100% - 24px);
+    position: relative;
+}
+.cards.light-version .content ul li .m-radio label::after,
+.cards.dark-version .content ul li .m-radio label::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    border-radius: 4px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 56px;
+    height: 32px;
+}
+.cards.light-version .content ul li .m-radio label[for="mac"]::after  {
+    background: #000 url(../../images/mastercard-icon.svg) no-repeat center;
+}
+.cards.dark-version .content ul li .m-radio label[for="dmac"]::after {
+    background: #fff url(../../images/mastercard-icon.svg) no-repeat center;
+}
+.cards.light-version .content ul li .m-radio label[for="ame"]::after,
+.cards.dark-version .content ul li .m-radio label[for="dame"]::after {
+    background: var(--primary) url(../../images/ame-icon.svg) no-repeat center;
+}
+
+.cards.light-version .content ul li .m-radio label[for="visa"]::after {
+    background: #1a1f71 url(../../images/visa-icon.svg) no-repeat center;
+}
+
+.cards.dark-version .content ul li .m-radio label[for="dvisa"]::after {
+    background: #fff url(../../images/visafill-icon.svg) no-repeat center;
+}
+
+.cards.light-version .content ul.no-border li,
+.cards.dark-version .content ul.no-border li {
+    border: none;
+}
+.cards.light-version .content ul.no-border.border-top::before,
+.cards.dark-version .content ul.no-border.border-top::before {
+    content: '';
+    position: absolute;
+    border-top: 1px solid #f2f2f2;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.cards.dark-version .content ul.no-border.border-top::before {
+    border-top: 1px solid rgba(255,255,255,0.24);
+}
+
+.dark-version {
+    background-color: var(--dark-bg);
+    color: var(--white);
+}
+
+.dark-version .heading,
+.dark-version .content {
+    padding: 24px;
+}
+
+.dark-version .heading .h5,
+.cards.dark-version .content .m-checkbox label,
+.cards.dark-version .content .form-group label {
+    color: var(--white);
+}
+.dark-version .heading .body2.text-gray,
+.cards.dark-version .content ul li .avitartitle p.text-gray {
+    color: var(--light-gray) !important;
+}
+
+.cards.dark-version .content ul li .m-radio label,
+.cards.dark-version .content ul li .avitartitle .body2 {
+    color: var(--white);
+}
+
+.cards.dark-version .content ul li {
+    border: 1px solid rgba(255,255,255,0.24);
+    margin: 8px 0;
+    height: 48px;
+    line-height: 48px;
+    display: block;
+}
+.cards.dark-version .content ul.no-border.border-top li:first-child,
+.cards.light-version .content ul.no-border.border-top li:first-child {
+    margin-top: 50px;
+}
+
+.cards.dark-version .content ul li .avitar-label .icon.avitar i[fill="blue"] svg {
+    stroke: #00a1e8;
+}
+
+.cards.dark-version .content ul li .avitar-label .icon.avitar i.loop svg path {
+    fill: #00a1e8;
+    stroke: transparent;
+}
+
+.cards.light-version .content .form-group .inputicon,
+.cards.dark-version .content .form-group .inputicon {
+    top: 42px;
+}
+.cards.light-version .content .form-group select,
+.cards.dark-version .content .form-group select {
+    text-indent: 0px;
+    padding-left: 10px;
+}
+
+.cards.light-version .content .m-checkbox .m-checkbox__label,
+.cards.dark-version .content .m-checkbox .m-checkbox__label {
+    padding-left: 0.5em;
+} 
+.cards.light-version .content .Carousel__track,
+.cards.dark-version .content .Carousel__track {
+    display: flex;
+}
+.cards.light-version .content .card-carousel ul.Carousel__dots,
+.cards.dark-version .content .card-carousel ul.Carousel__dots {
+    display: flex;
+    width: 100%;
+    float: left;
+    margin-top: -20px !important;
+    margin: 0;
+}
+.cards.light-version .content .card-carousel ul.Carousel__dots li,
+.cards.dark-version .content .card-carousel ul.Carousel__dots li {
+    border: none;
+    height: auto;
+    line-height: normal;
+}
+.cards.light-version .content .Carousel__track li,
+.cards.dark-version .content .Carousel__track li {
+    height: auto !important;
+    line-height: normal !important;
+}
+.cards.light-version .content .card-carousel ul.Carousel__dots li .Carousel__dot,
+.cards.dark-version .content .card-carousel ul.Carousel__dots li .Carousel__dot {
+    opacity: 1;
+}
+.cards.light-version .content .card-carousel ul.Carousel__dots li .Carousel__dot::before {
+    background-color :rgba(187, 187, 187, 0.64);
+}
+.cards.dark-version .content .card-carousel ul.Carousel__dots li .Carousel__dot::before {
+    background-color: rgba(255,255,255,0.64)
+}
+.cards.light-version .content .card-carousel ul.Carousel__dots li .Carousel__dot--selected::before,
+.cards.dark-version .content .card-carousel ul.Carousel__dots li .Carousel__dot--selected::before {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: var(--primary);
+    margin-top: -2px;
+}
+
+.carousel .dots,
+.cards.light-version .content .carousel .dots {
+    background-color: #000;
+    width: 4px !important;
+    height: 4px !important;
+    margin: 0 10px !important;
+    vertical-align: middle;
+}
+.cards.dark-version .content .carousel .dots {
+    background-color: rgba(255,255,255,0.64);
+}
+.carousel .dots.current,
+.cards.light-version .content .carousel .dots.current,
+.cards.dark-version .content .carousel .dots.current {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: var(--primary);
+}
+
+.cards.light-version .content .deposite-amt,
+.cards.dark-version .content .deposite-amt {
+    text-align: center;
+    margin-top: 10px;
+}
+.cards.light-version .content .deposite-amt .h5,
+.cards.dark-version .content .deposite-amt .h5 {
+    margin-bottom: 10px;
+}
