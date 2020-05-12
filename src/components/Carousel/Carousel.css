@@ -190,7 +190,11 @@
   background-color: #2896b5;
   display: flex;
   justify-content: center;
+  padding-left: 18px;
   align-content: center;
+}
+.card-carousel.arrows-bottom.hasTD .slide-count {
+  bottom: 182px;
 }
 .card-carousel .slide-count .Carousel__dots,
 .card-carousel .slide-count .total {
@@ -225,6 +229,9 @@
   background-color: transparent;
   width: 20px;
   height: 14px;
+}
+.card-carousel.arrows-bottom.hasTD .Carousel__arrows {
+  bottom: 194px;
 }
 .card-carousel.arrows-bottom .Carousel__arrows.Carousel__arrowLeft {
   left: 35px;
@@ -261,5 +268,39 @@
 .card-carousel.dots-bottom .Carousel__dots li:last-child .Carousel__dot::before {
   width: 4px;
   height: 4px;
+}
+.card-carousel.arrows-bottom .card .carddescription .h6 {
+  margin-bottom: 14px;
+}
+
+.card-carousel.arrows-top .card .carddescription {
+  background-color: #f2f2f2;
+}
+.card-carousel.arrows-top {
+  padding: 24px 10px;
+}
+.card-carousel.arrows-top .Carousel__arrows {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background-color: transparent;
+  width: 20px;
+}
+.card-carousel.arrows-top .Carousel__arrows:disabled {
+  background-color: transparent !important;
+}
+.card-carousel.arrows-top .Carousel__arrows:disabled span {
+  border-color: #f2f2f2;
+}
+.card-carousel.arrows-top .Carousel__arrows span {
+  border-color: var(--gray);
+}
+.card-carousel.arrows-top .Carousel__arrows span:hover,
+.card-carousel.arrows-top .Carousel__arrows:hover span {
+  border-color: var(--black);
+}
+.card-carousel.arrows-top .Carousel__arrows.Carousel__arrowLeft {
+  left: unset;
+  right: 80px;
 }
 /* Card Carousel css end */

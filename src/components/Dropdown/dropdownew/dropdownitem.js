@@ -15,7 +15,7 @@ class dropdownitem extends Component {
             <ul className='__options' onClick={this.props.onOutsideClick}>
             {options}
           </ul>
-        );
+        ); 
     }
 }
 

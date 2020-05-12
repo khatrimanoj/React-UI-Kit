@@ -3,18 +3,16 @@ import Card from '../../Magazines/Cardtags/card/card';
 import Cardimg from '../../Magazines/Cardtags/cardimage/Cardimg';
 import Cardoverlay from '../../Magazines/Cardtags/Cardoverlay/Cardoverlay';
 import Detail from '../../Magazines/Cardtags/carddetail/carddetail';
+import Carddec from '../../Magazines/Cardtags/Carddescription/carddec'
 import Button from '../../button/buttonprop/buttonprop';
 import Cardheading from '../../Magazines/Cardtags/Carddescription/cardheading';
-import CardDT from '../../Magazines/Cardtags/Carddescription/cardDT';
-import Action from '../../Magazines/Cardtags/Cardaction/Cardaction';
-import CardFooter from '../../Magazines/Cardtags/Cardfooter/Cardfooter';
 import { Icon } from 'react-icons-kit'
 import {moreHorizontal} from 'react-icons-kit/feather/moreHorizontal'
 import CarouselImage1 from '../../../images/carousel/Card_Carousel1.png';
 import CarouselImage2 from '../../../images/carousel/Card_Carousel2.png';
+import CarouselImage3 from '../../../images/carousel/Card_Carousel3.png';
 import {heart} from 'react-icons-kit/feather/heart'
-import { thumbsUp } from 'react-icons-kit/feather/thumbsUp';
-import { messageSquare } from 'react-icons-kit/feather/messageSquare';
+import {resize_1} from 'react-icons-kit/ikons/resize_1'
 import Carousel from '../CarouselWrapper';
 import CarouselDots from '../CarouselDots';
 import '../Carousel.css'
@@ -25,6 +23,7 @@ class NumberCountCarousel extends Component {
         this.state = {
             value: 0,
             value1: 0,
+            value2: 0,
             slides: [
             (<Card style="z1 text-center text-white img-card ">
                 <Cardimg img={CarouselImage1}></Cardimg>
@@ -209,15 +208,78 @@ class NumberCountCarousel extends Component {
                     </Cardoverlay>
                 </Card>),
             ],
+            slides3: [  
+                (<Card style="z1">
+                    <Cardimg img={CarouselImage3} />
+                    <Cardoverlay >
+                        <Detail>
+                            <div className="card-flex mt-5">
+                                <div className="flex"></div>
+                                <div className="flex">
+                                    <Button
+                                        size=""
+                                        style="btn-white text"
+                                        Centericon={true}
+                                        icon={<Icon icon={resize_1} size={18} />}
+                                    />
+                                </div>
+                            </div>
+                        </Detail>
+                    </Cardoverlay>
+
+                </Card>), 
+                (<Card style="z1">
+                    <Cardimg img={CarouselImage3} />
+                    <Cardoverlay >
+                        <Detail>
+                            <div className="card-flex mt-5">
+                                <div className="flex"></div>
+                                <div className="flex">
+                                    <Button
+                                        size=""
+                                        style="btn-white text"
+                                        Centericon={true}
+                                        icon={<Icon icon={resize_1} size={18} />}
+                                    />
+                                </div>
+                            </div>
+                        </Detail>
+                    </Cardoverlay>
+
+                </Card>),
+                (<Card style="z1">
+                    <Cardimg img={CarouselImage3} />
+                    <Cardoverlay >
+                        <Detail>
+                            <div className="card-flex mt-5">
+                                <div className="flex"></div>
+                                <div className="flex">
+                                    <Button
+                                        size=""
+                                        style="btn-white text"
+                                        Centericon={true}
+                                        icon={<Icon icon={resize_1} size={18} />}
+                                    />
+                                </div>
+                            </div>
+                        </Detail>
+                    </Cardoverlay>
+
+                </Card>),
+            ]
         }
         this.onchange = this.onchange.bind(this);
         this.onchange2 = this.onchange2.bind(this);
+        this.onchange3 = this.onchange3.bind(this);
     }
     onchange(value) {
         this.setState({ value });
     }
     onchange2(value1) {
         this.setState({ value1 });
+    }
+    onchange3(value2) {
+        this.setState({ value2 });
     }
     render() {
         return (
@@ -233,8 +295,23 @@ class NumberCountCarousel extends Component {
                 </div>
                 <div className="col-md-4">
                     <div className="card-carousel dots-bottom">
-                        <Carousel arrows autoPlay={5000} infinite slides={this.state.slides2} value={this.state.value1} onChange={this.onchange2}  />
+                        <Carousel arrows autoPlay={2000} infinite slides={this.state.slides2} value={this.state.value1} onChange={this.onchange2}  />
                         <CarouselDots value={this.state.value1} onChange={this.onchange2} number={this.state.slides2.length} />
+                    </div>
+                </div>
+                <div className="col-md-4">
+                    <div className="card-carousel arrows-bottom hasTD">
+                        <Carousel arrows autoPlay={3000} infinite slides={this.state.slides3} value={this.state.value2} onChange={this.onchange3}  />
+                        <Card>
+                            <Detail>
+                                <Cardheading className="mb-10" heading="Another Shot of Orange"/>
+                                <Carddec className="mt-10" Description="The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think" />
+                            </Detail>
+                        </Card>
+                        <div className="slide-count">
+                            <CarouselDots value={this.state.value2} onChange={this.onchange3} number={this.state.slides3.length} />/
+                            <div className="total">{this.state.slides3.length}</div>
+                        </div>
                     </div>
                 </div>
             </div>

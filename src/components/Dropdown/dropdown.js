@@ -158,7 +158,34 @@ class dropdown extends Component {
                     icon: <Icon icon={sliders} size={20} />
                 },
                
-            ]
+            ],
+            directories3: [
+                {
+                    type: 'file',
+                    name: 'Project Management',
+                    subname: 'by Martin Golubowski',
+                    link: '#'
+                },
+                {
+                    type: 'file',
+                    name: 'Shopping Cart UI',
+                    subname: 'by ABC Design Studio',
+                    link: '#'
+                },
+                {
+                    type: 'file',
+                    name: 'Redesign Concept',
+                    subname: 'by Ricardo Rodrigues',
+                    link: '#'
+                },
+                {
+                    type: 'file',
+                    name: 'Inspiring UI Designs',
+                    subname: 'by Matrix Studio',
+                    link: '#'
+                },
+               
+            ],
 
         };
         
@@ -233,7 +260,17 @@ class dropdown extends Component {
                                  <div className="col-md-3">
                                      {/* <Dropdownmarge data={folders.directories} /> */}
                                      
-                                     <Dropdown data={folders.directories} searching={true} totals={true}/>
+                                     <Dropdown 
+                                         data={folders.directories3} 
+                                         searching={true} 
+                                         link={true}
+                                         linkstyle="w-100 pull-left text-primary mt-10 mb-10"
+                                         linkurl="#"
+                                         linklable="View all boards"
+                                         button={true}
+                                         btnlable="Create new board" 
+                                         btnstyle="btn btn-sm btn-gray text  w-100 pull-left text-left text-black"
+                                         btnicon={<Icon icon={plus} size={20} />}/>
                                  </div>
 
  
