@@ -1,7 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+
 import Dropdowncontainer from '../dropdowncontainer/dropdownconatiner';
 import Input from '../dropdownsearch/dropdownsearch';
+import Button from '../../../button/buttonprop/buttonprop';
 
 class dropdownmarge extends Component {
     static propTypes = {
@@ -10,16 +13,22 @@ class dropdownmarge extends Component {
       static defaultProps = {
         data: []
       };
+      
     constructor(props) {
         super(props);
         this.handleInput=this.handleInput.bind(this);
         this.showDropdown = this.showDropdown.bind(this);
-        this.onSelect = this.onSelect.bind(this);
+        this.updateState = this.updateState.bind(this);
+        this.clearInput = this.clearInput.bind(this);
+
+
+        
         this.state={
             data:this.props.data,
             labelItem: null,
             typeDropdown: null,
             selected: null,
+            searcharray: '',
 
         };
     }
@@ -37,19 +46,14 @@ class dropdownmarge extends Component {
             labelItem: firstItem
         });    
       }
+      
     
       checkType = (value) => {
         this.setState({
             typeDropdown: value
         });    
       };
-      chooseItem = (value) => {    
-        if (this.state.labelItem !== value) {
-          this.setState({
-            labelItem: value      
-          })
-        }    
-      };
+      
     transformJSON=(data, value)=>{
     let newObj=[];
         (function filterJSON(obj, searchValue)
@@ -70,7 +74,6 @@ class dropdownmarge extends Component {
     showDropdown = () => {
         this.setState({ isOpen: true });
         document.addEventListener("click", this.hideDropdown);
-        this.inputRef.current.focus();
       };
       hideDropdown = () => {
         this.setState({ isOpen: false });
@@ -81,20 +84,23 @@ class dropdownmarge extends Component {
             value:event.target.value.toLowerCase()
         };
         this.setState({data: this.transformJSON(this.props.data,event.target.value.toLowerCase())});
+        this.setState({ isOpen: true });
+        document.removeEventListener("click", this.hideDropdown);
     };
-    onSelect(option){
-      this.setState({
-        selected: option,
-        opened: false
-      }, ()=> {
-        //console.info(this.state);
-      });
-    }
+ 
+    updateState(e) {
+      this.setState({searcharray: e.target.value});
+      
+   }
+    clearInput(e) {
+      this.setState({searcharray: ''});
+      this.setState({data: this.transformJSON(this.props.data,e.target.value.toLowerCase())});
+      ReactDOM.findDOMNode(this.refs.inputRef).focus();
+   }
+  
     render() {
-      let selected = this.state.selected ? this.state.selected.value : 'Select';
-        const {data,searching} = this.props ;
-        const {value, label} = this.state.typeDropdown
-        const { size,border } = this.props; 
+      
+        const {searching,button,size,border,link} = this.props ;
         const dropdownClassname = `
         dropdown
         ${size === 'lg' && 'lg-dropdown'}
@@ -103,13 +109,36 @@ class dropdownmarge extends Component {
         dropdown-toggle
         ${border === 'false' && 'bordernone'}
         `;   
-        
+        /* dropdown with search start here*/
         let searchinput;
         if (searching === true) {
-          searchinput = <Input handleChange={this.handleInput}/>;
+          searchinput = <Input handleChange={this.handleInput} updatevalue={this.updateState} searchvalue={this.state.searcharray} clearInput={this.clearInput}  ref={this.inputRef}/>;
         } else {
           searchinput = null;
         }
+        /*dropdown search end here*/
+        /*dropdown with button start here*/
+        let dbutton;
+        if (button === true) {
+          dbutton = <li  className="no-padding-bottom no-hover-bg d-btnli"><Button
+          style={this.props.btnstyle} 
+          label={this.props.btnlable} 
+          Lefticon={true}
+          icon={this.props.btnicon}
+           /></li>;
+        } else {
+          dbutton = null;
+        }
+        /*dropdown with button end here*/
+        /*dropdown view all link start here*/
+        let dlink;
+        if (link === true) {
+          dlink = <li className="no-hover-bg"><a className={this.props.linkstyle} href={this.props.linkurl}>{ this.props.linklable}</a></li>;
+        } else {
+          dlink = null;
+        }
+        /*dropdown view all link end here*/
+
         return (
             <div className={ ` ${dropdownClassname} ${this.state.isOpen ? 'open' : ''}`} >
                 
@@ -117,14 +146,13 @@ class dropdownmarge extends Component {
                {this.state.labelItem}
               
             </button>
-                
-                <Dropdowncontainer style="dropdown-menu" data={this.props.data} onClick={() => this.chooseItem()} number={this.props.totals}>
+                <ul className="dropdown-menu">
+                <Dropdowncontainer  data={this.state.data} onClick={() => this.chooseItem()} >
                   {searchinput}
-                 
-                <div className="searchvalue">{this.state.value? ("Searching for:"+this.state.value):null}</div>
-
                 </Dropdowncontainer>
-                
+                {dlink}
+                {dbutton}
+                </ul>
             </div>
         );
     }

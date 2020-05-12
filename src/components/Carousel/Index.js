@@ -3,6 +3,7 @@ import Header from '../header/header';
 import CenteredCarousel from './Types/CenteredCarousel'
 import SingleCarousel from './Types/SingleSlider'
 import NumberCountCarousel from './Types/NumberCountCarousel'
+import MultiItemCarousel from './Types/MultiItemCarousel'
 
 class Index extends React.Component {
   
@@ -35,7 +36,9 @@ class Index extends React.Component {
               <div className="col-md-12 mb-30">
                 <NumberCountCarousel />
               </div>
-            
+              <div className="col-md-12 mb-30">
+                <MultiItemCarousel />
+              </div>
           </div>
         </section>
       </div>

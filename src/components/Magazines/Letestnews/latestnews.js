@@ -46,7 +46,7 @@ class latestnews extends Component {
                         <Detail>
                             <div className="card-flex">
                                 <div className="flex">
-                                    <Cardheading heading="Latet News" />
+                                    <Cardheading heading="Latest News" />
                                 </div>
                                 <div className="flex">
                                     <Button
@@ -283,7 +283,7 @@ class latestnews extends Component {
                         <Detail>
                             <div className="card-flex">
                                 <div className="flex">
-                                    <Cardheading style="text-white h6" heading="Latet News" />
+                                    <Cardheading style="text-white h6" heading="Latest News" />
                                 </div>
                                 <div className="flex">
                                     <Button

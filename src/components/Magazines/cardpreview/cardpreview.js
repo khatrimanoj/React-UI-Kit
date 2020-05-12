@@ -296,7 +296,7 @@ class cardpreview extends Component {
                                  <CardDT dt="30 min ago" />
                             </div>
                             <div>
-                                <Action count="200" icon={<Icon icon={messageSquare} />} />&nbsp;&nbsp;&nbsp;&nbsp;
+                                <Action count="2001" icon={<Icon icon={messageSquare} />} />&nbsp;&nbsp;&nbsp;&nbsp;
                               <Action count="200" icon={<Icon icon={thumbsUp} />} />
                             </div>
                         </CardFooter>

@@ -4147,8 +4147,10 @@ button img
 }
 .dropdownsearch {
   width: 94%;
-  margin: 0 auto;
+  margin: 0 3%;
   position: relative;
+  margin-bottom: 5px;
+  float: left;
 }
 .dropdownsearch input {
   width: 100%;
@@ -4243,6 +4245,37 @@ button img
 {
   text-indent: 0;
   margin-right: 10px;
+}
+.d-subname
+{
+  width: 100%;
+  float: left;
+  color: var(--gray);
+
+}
+.dropdownsearch input:focus ~ button
+{
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent url(images/zoom.svg) no-repeat;
+  background-position: center center;
+  background-size: 18px; 
+}
+.dropdownsearch input:valid ~ button{
+  
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  top: 0;
+  right: 0;
+  border: none;
+  background: transparent url(images/delete_circal.svg) no-repeat;
+  background-position: center center;
+  background-size: 18px; 
 }
 /*============================dropdown css end here=============================*/
 /*============================footer css start here=============================*/

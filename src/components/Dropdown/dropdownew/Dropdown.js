@@ -40,7 +40,7 @@ class Dropdown extends Component {
     handleSelection(item) {
         this.props.onClick(item);
         this.toggleDropDown('close');
-    }
+    } 
     handleDocumentClick() {
         this.toggleDropDown('close');
     }
